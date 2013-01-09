@@ -12,13 +12,12 @@ class Express(){
 
 	public function generate($blogSrcDir,$blogDestDir){
 		//TODO:
-		$blogSrcDir  = $blogSrcDir && $this->conf['blogSrcDir'];
-		$blogDestDir = $blogDestDir && $this->conf['blogDestDir'];
-
+		// $blogSrcDir  = $blogSrcDir && $this->conf['blogSrcDir'];
+		// $blogDestDir = $blogDestDir && $this->conf['blogDestDir'];
 		if($blogDestDir && !is_dir($blogDestDir)){//如果存在目标目录参数并且目标目录不存在则创建该目录
 			mkdir($blogDestDir);
 		}elseif (!$blogDestDir) {
-			log('blogDestDir dosen\'t exist; progress has stop!',ERRO);
+			log('blogDestDir dosen\'t be given; progress has stop!',ERRO);
 		}
 
 		foreach( glob($blogSrcDir.'\*') as $fullPath ){
@@ -30,11 +29,22 @@ class Express(){
 				if ($depth == ) {
 					# code...
 				}
+			}else{
+
 			}
 		}
+
 	}
 
 	private function makeBlog(){
+
+	}
+
+	private function makeArticle(){
+
+	}
+
+	private function makePhoto(){
 		
 	}
 
