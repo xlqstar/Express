@@ -11,13 +11,13 @@ class Express(){
 	}
 
 	public function generate($blogSrcDir,$blogDestDir){
-		//TODO:
-		// $blogSrcDir  = $blogSrcDir && $this->conf['blogSrcDir'];
-		// $blogDestDir = $blogDestDir && $this->conf['blogDestDir'];
+		//TODO:判断
 		if($blogDestDir && !is_dir($blogDestDir)){//如果存在目标目录参数并且目标目录不存在则创建该目录
 			mkdir($blogDestDir);
-		}elseif (!$blogDestDir) {
-			log('blogDestDir dosen\'t be given; progress has stop!',ERRO);
+		}elseif(!is_dir($blogDestDir)){
+			log("博客源数据目录不存在",ERRO);
+		}elseif(!$blogDestDir || !$blogSrcDir) {
+			log('aruments dosen\'t be given; progress has stop!',ERRO);
 		}
 
 		foreach( glob($blogSrcDir.'\*') as $fullPath ){
@@ -45,7 +45,7 @@ class Express(){
 	}
 
 	private function makePhoto(){
-		
+
 	}
 
 	//
