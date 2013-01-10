@@ -1,0 +1,12 @@
+{
+	"blogSrcDir":"E:\\GitHub\\Express\\TestSpace\\BlogSrc",
+	"blogDestDir":"E:\\GitHub\\Express\\TestSpace\\BlogData",
+	"imgMaxWidth":400,
+	"title":"\u7acbQ\u7684\u535a\u5ba2",
+	"perPage":20,
+	"viewMode":"list",
+	"makeScope":null,
+	"makeTarget":"DIR",
+	"ifRemake":0,
+	"styleResourcePath":"..\/style\/"
+}

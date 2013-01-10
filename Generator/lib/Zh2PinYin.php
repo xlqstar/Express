@@ -425,20 +425,22 @@ class Zh2PinYin{
 			
 			if($letter > 160){
 				$tmp = ord(substr($string, ++$i, 1));
-				$output && $output.= "-";
-				$output .= $this->transform($letter * 256 + $tmp - 65536);
+				$output && $lastSingleChar && $output.= "-";
+				$lastSingleChar = $this->transform($letter * 256 + $tmp - 65536);
 			}else{
 				if($i - 1 > 0 && $lastLetter > 160) {
-					$output	 && $output.= "-";
+					$output	 && $lastSingleChar && $output.= "-";
 				}
-				$output .= $this->transform($letter);
+				$lastSingleChar = $this->transform($letter);
+
 			}
-			
+			$output .= $lastSingleChar;		
 			$lastLetter = $letter;
 
 		}
 		return $output;
 	}
 }
-$zh2pinyin = new Zh2pinyin();
-echo $zh2pinyin -> getPinYin("¼¤»îwindows");
+// $zh2pinyin = new Zh2pinyin();
+// echo $zh2pinyin -> getPinYin("¼¤»î ¡°¡±win dows");
+?>
