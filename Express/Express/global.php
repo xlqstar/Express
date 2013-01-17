@@ -17,6 +17,7 @@ function Elog($message,$level = INFO){
 	}else{
 		$level = 'INFO';
 	}
+	$message = mb_convert_encoding($message,"GBK","UTF-8");
 
 	echo "[$level]$message\n";
 
